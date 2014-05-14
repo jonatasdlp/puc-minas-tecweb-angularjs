@@ -57,8 +57,34 @@
 
 			.list-description h4 {
 				font-weight: bolder;
-			}
-		</style>
+      }
+
+      .with-background h1 {
+        color: white;
+        font-weight: bolder;
+        font-size: 180px;
+        margin-top: 200px;
+        text-shadow: 0px 0px 0 rgb(217,217,217),1px 1px 0 rgb(188,188,188),
+                     2px 2px 0 rgb(160,160,160),3px 3px 0 rgb(132,132,132),
+                     4px 4px 0 rgb(103,103,103),5px 5px 0 rgb(75,75,75),
+                     6px 6px 0 rgb(47,47,47),7px 7px 38px rgba(0,0,0,0.6),
+                     7px 7px 1px rgba(0,0,0,0.5),11px 13px 44px rgba(0,0,0,.2);
+       }
+
+       .slide-top-span span {
+          position: relative;
+          top: -115px;
+        }
+
+        .up-image img:first {
+        
+        }
+
+        .reveal pre {
+          box-shadow: none
+        }
+      
+    </style>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -89,8 +115,8 @@
 					<ul>
 						<li>O que é AngularJS ?</li>
 						<li>Porque usar ?</li>
-						<li>Vantagens e desvatagens...</li>
 						<li>Conceitos gerais...</li>
+						<li>Vantagens e desvatagens...</li>
 						<li>AngularJS na prática...</li>
 						<li>Code!</li>
 					</ul>
@@ -112,6 +138,7 @@
 					<ul>
 						<li>
 							<h4>Framework JavaScript com grande foco em HTML</h4>
+								<li><h5>HTML + JS</h5></li>
 						</li>
 						<li>
 							<h4>Desenvolvido pelo Google em 2009</h4>
@@ -120,7 +147,7 @@
 							</ul>
 						</li>
 						<li>
-							<h4>Conceito MVC</h4>
+							<h4>Arquitetura MVC</h4>
 							<ul>
 								<li><h5>Podendo variar (MV*)...</h5></li>
 							</ul>
@@ -133,6 +160,15 @@
 						</li>
 					</ul>					
 				</section>
+        
+        <section class="slide-top-span">
+          <h1>
+            <img src="img/angularjs-logo2.png" style="width: 365px"/>
+            <span> + </span>
+            <img src="img/html5-logo.png" style="width: 360px"/>
+          </h1>
+          <h3>"HTML enhanced for web apps!"</h3>
+        </section>
 
 				<section class="list-description">
 					<ul>
@@ -166,17 +202,322 @@
 
 				<section>
 					<h2>Porque <strong>usar</strong> ?</h2>
-				</section>
+        </section>
+        
+        <section>
+          <h2>No contexto de uma aplicação</h2>
+          <p class="fragment" data-fragment-index="0">com alta complexidade e dinamismo da página html...</p>
+          <p class="fragment" data-fragment-index="1">... componente da parte lógica sendo empurrada para o Cliente(JS)</p>
+          <p class="fragment" data-fragment-index="2">FATO: necessidade de uma maior organização do código no front-end</p>
+        </section>
+
+        <section data-background="img/super-angularjs.jpg">
+        </section>
+
+        <section>
+          <h3>  
+              AngularJS consegue realizar essa tarefa muito bem, 
+              permitindo que você quebre o seu código em partes, 
+              separando assim suas responsabilidades. 
+          </h3>
+        </section>
+        
+        <section>
+          <h3>Além de contar com Two-Way Data Binding e incentivar o uso de Dependency Injection.</h3>
+        </section>
+        
+        <section>
+          <h2>Data Binding</h2>
+          <ul>
+            <li><strike>One-Way</strike></li>
+            <li>Two-Way</li>
+            <li>
+              Three-Way ???? Nope =)
+              <ul>
+                <li>Por enquanto não!</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <section>
+          <p>
+            <img src="img/one-way.png" style="position: relative; margin-bottom: 97px;"/>
+            <img src="img/two-way.png" />
+          </p>
+        </section>
+
+        <section>
+          <h2>Dependency Injection</h2>
+          <ul>
+            <li>Diminuir acoplamento entre modulos do sistema.</li>
+            <li>Alto acoplamento pode prejudicar o design de uma arquitetura</li>
+          </ul>
+        </section>
 
 				<section>
 					<img src="img/angularjs-logo.png">
 					<h2>Menos Server-side</h4>
 					<h2>Mais poder para o Client-side</h4>
-				</section>
+        </section>
 
-				<section>	
-					
+        <section data-background="img/way.jpg">
+        </section>
+        
+        <section>
+          <h2>Componentes:</h2>
+          <ul>
+            <li>Diretivas</li>
+            <li>Controllers</li>
+            <li>Services</li>
+            <li>Routes</li>
+            <li>Módulos</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Diretivas</h2>
+        </section>
+
+        <section data-background="img/html-pw.jpg">
+          <h1 style="color: white; font-weight: bolder;">
+            Trazem um "novo poder" ao HTML 
+          </h1>
+        </section>
+
+        <section>
+          <h2>Definidas do documento HTML</h2>
+          <pre>
+            <code data-trim contenteditable>
+
+<div>
+  <input ng-model='name' />
+  <span>{{name}}</span>
+</div>
+
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>Algumas Diretivas:</h2>
+          <ul>
+            <li>ng-app</li>
+            <li>ng-model</li>
+            <li>ng-class</li>
+            <li>ng-repeat</li>
+            <li>ng-show & ng-hide</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Controllers</h2>
+        </section>
+
+        <section>
+          <h3>
+            ... comportamento por trás do DOM e é também 
+            responsável por inicializar e/ou adicionar 
+            comportamentos ao objeto $scope, o qual permite 
+            a comunicação entre a View e o seu Controller
+          </h3>
+        </section>
+
+        <section>
+          <h3>
+            A diretiva <b>ng-controller</b> define em qual parte do
+             documento HTML ele será utilizado.
+          </h3>
+
+          <pre>
+            <code data-trim contenteditable>
+function SimpleController($scope){
+  $scope.someThings = ['My', 'first', 'controller'];
+}
+            </code>
+          </pre>
+
+          <pre>
+            <code data-trim contenteditable>
+<ul ng-controller="SimpleController">
+  <li ng-repeat="thing in someThings">
+    <span>{{thing}}</span>
+  </li>
+</ul>
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h3><b>$scope</b>: Onde a mágica acontece</h3>
+          <img src="img/scope.png"/>
+        </section>
+  
+        <section>
+           <pre>
+             <code>
+              
+             </code>
+           </pre>
+        </section>
+
+        <section data-background="img/not-bad.jpg" class="with-background">	
+				  	<h1 >NOT BAD</h1>
 				</section>
+ 
+        <section>
+          <h2>
+            <code>< ng-app="MyApp"></code>
+          </h2>
+          <h2>Módulos</h2>
+        </section>
+
+        <section>
+            <h2>
+              Inicialização e emcapsulamento 
+              dos demais componentes descritos
+            </h2>
+        </section>
+
+        <section>
+          <pre>
+            <code data-trim contenteditable>
+      
+//Inicialização do módulo
+var module = angular.module('AngularIntro', []);
+ 
+//Adição do Controller ao módulo
+module.controller('SimpleController', function($scope){
+  $scope.someThings = ['First', 'Angular', 'Module'];
+    $scope.addThing = function(){
+    var thing = $scope.thing;
+    if($scope.someThings.indexOf(thing) == -1)
+      $scope.bairroDoLimoeiro.push(thing);
+    $scope.thing = '';
+  }
+});
+
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Routes</h2>
+        </section>
+
+        <section>
+          <h3>Licação entre Controller e View (HTML partials)</h3>
+          <pre>
+            <code data-trim contenteditable>
+var app - angular.module('MyApp', ['ngRoute', 'simpleController']);
+            </code>
+          </pre>
+          <pre>
+            <code data-trim contenteditable>
+app.config(['$routeProvider', 
+  function($routeProvider) {
+    $routeProvider.when('/home', {
+      templateUrl: 'partials/home.html',
+      controller: 'homeController'
+    }).otherwise( {
+      redirectTo: '/erro'
+    });
+  }
+]);
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Services</h2>
+        </section>
+
+        <section>
+          <h2>O que é? Para que serve?</h2>
+          <br />
+          <ul>
+            <li><h5>Objetos Singletons que realizam tarefas específicas comuns em uma aplicação WEB</h5></li>
+            <li><h5>Compartilhamento de informações entre controller</h5></li>
+            <li><h5>Servir como comunicação com o servidor</h5></li>
+            <li>
+                <h5>Concentrar a lógica de negócio deixando o fluxo 
+                  da aplicação por conta do controller</h5>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Na prática...</h3>
+          <pre>
+            <code data-trim contenteditable>
+// Service            
+module.factory('simpleService', function(){
+  var service = {};
+  service.nameList = ['Joe', 'Lenny', 'Colt', 'Julie']; 
+
+  service.addName = function(name){
+    if(service.nameList.indexOf(name) == -1)
+      service.nameList.push(name); 
+  }
+ 
+  return service;
+});
+            </code>
+          </pre>
+          <pre>
+            <code data-trim contenteditable>
+// Consumindo no controller    
+module.controller('SimpleController', function($scope, simpleService){
+  $scope.bairroDoLimoeiro = simpleService.nameList;
+
+  $scope.addName = function(){
+    simpleService.addName($scope.name);
+    $scope.name = '';
+  }
+});
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>Mais sobre AngularJS...</h2>
+        </section>
+
+        <section>
+          <h2>Vantagens</h2>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Desvantagens</h2>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+
+        <section data-background="#000">
+          <h3 style="color: white">
+            <code>
+              $scope.showMe="More Code"<span style="border-left: 2px solid" class="cursor"></span>
+            </code>
+        </h3>
+        </section>
+        
+        <section>
+          <h2>Construindo um simples app usando angularJS...</h2>
+        </section>
+
+        <section>
+          <h1>...</h1>
+        </section>
 
 				<section>
 					<h1>THE END</h1>
