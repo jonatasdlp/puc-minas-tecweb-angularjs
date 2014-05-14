@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app>
 
 	<head>
 		<meta charset="utf-8">
@@ -16,6 +16,8 @@
 
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+    <script src="lib/angular/angular.js"></script>
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -81,10 +83,16 @@
         }
 
         .reveal pre {
-          box-shadow: none
+          box-shadow: none;
         }
       
     </style>
+
+    <script type="text/javascript">
+      function SimpleController($scope){
+        $scope.someThings = ['My', 'first', 'controller'];
+      }
+    </script>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -118,7 +126,6 @@
 						<li>Conceitos gerais...</li>
 						<li>Vantagens e desvatagens...</li>
 						<li>AngularJS na prática...</li>
-						<li>Code!</li>
 					</ul>
 				</section>
 
@@ -138,7 +145,9 @@
 					<ul>
 						<li>
 							<h4>Framework JavaScript com grande foco em HTML</h4>
+              <ul>
 								<li><h5>HTML + JS</h5></li>
+              </ul> 
 						</li>
 						<li>
 							<h4>Desenvolvido pelo Google em 2009</h4>
@@ -286,12 +295,12 @@
         </section>
 
         <section>
-          <h2>Definidas do documento HTML</h2>
+          <h2>Documento HTML</h2>
           <pre>
             <code data-trim contenteditable>
 
 <div>
-  <input ng-model='name' />
+  <input type="text" ng-model='name' />
   <span>{{name}}</span>
 </div>
 
@@ -316,7 +325,7 @@
 
         <section>
           <h3>
-            ... comportamento por trás do DOM e é também 
+            Manipula o comportamento por trás do DOM e é também 
             responsável por inicializar e/ou adicionar 
             comportamentos ao objeto $scope, o qual permite 
             a comunicação entre a View e o seu Controller
@@ -356,9 +365,19 @@ function SimpleController($scope){
         <section>
            <pre>
              <code>
-              
+                <div>
+                  <input type="text" "ng-model"='name' />
+                  <span>{{name}}</span>
+                </div>  
              </code>
            </pre>
+            <div>
+              Entrada: <input type="text" ng-model='name' style="width: 300px; height: 60px;
+                                                        font-size: 35px; border: 2px solid;"/>
+              <br />
+              <br />
+              <h3>{{name}}</h3>
+            </div>  
         </section>
 
         <section data-background="img/not-bad.jpg" class="with-background">	
@@ -366,15 +385,12 @@ function SimpleController($scope){
 				</section>
  
         <section>
-          <h2>
-            <code>< ng-app="MyApp"></code>
-          </h2>
           <h2>Módulos</h2>
         </section>
 
         <section>
             <h2>
-              Inicialização e emcapsulamento 
+              Inicialização e encapsulamento 
               dos demais componentes descritos
             </h2>
         </section>
@@ -406,10 +422,10 @@ module.controller('SimpleController', function($scope){
         </section>
 
         <section>
-          <h3>Licação entre Controller e View (HTML partials)</h3>
+          <h3>Ligação entre Controller e View (HTML partials)</h3>
           <pre>
             <code data-trim contenteditable>
-var app - angular.module('MyApp', ['ngRoute', 'simpleController']);
+var app = angular.module('MyApp', ['ngRoute', 'simpleController']);
             </code>
           </pre>
           <pre>
@@ -438,7 +454,7 @@ app.config(['$routeProvider',
           <ul>
             <li><h5>Objetos Singletons que realizam tarefas específicas comuns em uma aplicação WEB</h5></li>
             <li><h5>Compartilhamento de informações entre controller</h5></li>
-            <li><h5>Servir como comunicação com o servidor</h5></li>
+            <li><h5>Comunicação com o servidor</h5></li>
             <li>
                 <h5>Concentrar a lógica de negócio deixando o fluxo 
                   da aplicação por conta do controller</h5>
@@ -468,10 +484,10 @@ module.factory('simpleService', function(){
             <code data-trim contenteditable>
 // Consumindo no controller    
 module.controller('SimpleController', function($scope, simpleService){
-  $scope.bairroDoLimoeiro = simpleService.nameList;
+  $scope.nameList = simpleService.nameList;
 
   $scope.addName = function(){
-    simpleService.addName($scope.name);
+    nameList.addName($scope.name);
     $scope.name = '';
   }
 });
@@ -486,37 +502,41 @@ module.controller('SimpleController', function($scope, simpleService){
         <section>
           <h2>Vantagens</h2>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Facilidade em maninpular o DOM</li>
+            <li>Suporte a unit teste</li>
+            <li>Suporte a diveros browsers atuais</li>
+            <li>Flexibilidade, fácil integração com bibliotecas externas</li>
           </ul>
         </section>
         
         <section>
           <h2>Desvantagens</h2>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Conceitos complexos</li>
+            <ul>
+              <li><i>Data Binding</i></li>
+            </ul>
           </ul>
         </section>
 
-        <section data-background="#000">
-          <h3 style="color: white">
-            <code>
-              $scope.showMe="More Code"<span style="border-left: 2px solid" class="cursor"></span>
-            </code>
-        </h3>
+        <section class="slide-logo-presentation">
+          <h2>Quem usa:</h2>
+          <p>
+            <small><img src="img/google-logo.png"></small>
+            <small><img src="img/youtube.png"></small> 
+          </p>
         </section>
-        
-        <section>
-          <h2>Construindo um simples app usando angularJS...</h2>
+
+        <section class="slide-logo-presentation">
+          <h2>Onde aprender mais:</h2>
+          <p>
+            <small><img src="img/codeschool.jpg"></small>
+            <small><img src="img/house.png"></small> 
+          </p>
         </section>
 
         <section>
-          <h1>...</h1>
+          <h1>Dúvidas?</h1>
         </section>
 
 				<section>
